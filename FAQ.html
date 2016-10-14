@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    
+  
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <style>  <!-- This will fix the scroolbar caused by materialze.css -->
+          [class]{will-change:unset}[type=checkbox]:checked+label:before{-webkit-backface-visibility:visible;backface-visibility:visible}
+      </style>  
+      <style>
+        main {
+              top: 40px;
+              bottom: 20px;
+              width: 100%
+              } 
+        body{margin:5;width:100%;height:100%;overflow-x:hidden}footer,header{position:fixed;width:100%}header{top:0}footer{bottom:0}main{position:absolute;border-top:2px solid #F2F2F2;border-bottom:2px solid #F2F2F2;overflow:auto;overflow-x:hidden}
+      </style>
+      
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+      <script>
+        
+  $(function() {
+      var data = <?= data ?> ;
+      data = JSON.parse(data);
+      var c = $('#content');
+      var content = '' + '<div class="row">' + '<div class="col s12">' +
+          '  <ul class="tabs">';
+      for (i in data) {
+          var title = data[i][0];
+          var desc = data[i][1];
+          var tab = '<li class="tab col s1"><a href="#' + title + '">' +
+              title + '</a></li>'
+          content += tab;
+      }
+      content += '</ul></div>';
+      for (i in data) {
+          var title = data[i][0];
+          var desc = data[i][1];
+          var tab = '<div id="' + title + '" class="col s12">' +
+              '<ul class="collapsible popout" data-collapsible="accordion">';
+          for (var j = 1; j < desc.length; j++) {
+              var lTitle = desc[j][0];
+              var lDesc = desc[j][1];
+              var li = '' + '<li>' + '<div class="collapsible-header">' +
+                  lTitle + '</div>' +
+                  '<div class="collapsible-body"><p>' + lDesc +
+                  '</p></div>' + '</li>';
+              tab += li;
+          }
+          tab += '</ul></div>';
+          content += tab;
+      }
+      content += '</div>';
+      console.log(content);
+      c.html(content);
+      $('.collapsible').collapsible({
+          //      accordion : false // A setting that changes the collapsible behavior to expandable instead of the default accordion style
+      });
+      $('ul.tabs').tabs();
+  });
+        </script>
+  </head>
+  <body>
+  
+   <header>
+       <div class="container center-align" style="margin-top:10px">
+            This is my header
+       </div>
+   </header>
+   
+   
+
+    <main>  
+       <div id="content" class="container"></div>
+    </main>
+  
+  
+     <footer>
+       <div class="container center-align" style="margin-top:10px">
+            This is my footer
+       </div>
+     </footer>
+  
+  
+    
+  </body>
+</html>
+
+
