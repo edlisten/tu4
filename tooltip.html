@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    
+  
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <style>  <!-- This will fix the scroolbar caused by materialze.css -->
+          [class]{will-change:unset}[type=checkbox]:checked+label:before{-webkit-backface-visibility:visible;backface-visibility:visible}
+      </style>  
+      <style>
+        main {
+              top: 70px;
+              bottom: 60px;
+              width: 100%
+              } 
+        body{margin:5;width:100%;height:100%;overflow-x:hidden}footer,header{position:fixed;width:100%}header{top:0}footer{bottom:0}main{position:absolute;border-top:2px solid #F2F2F2;border-bottom:2px solid #F2F2F2;overflow:auto;overflow-x:hidden}
+      </style>
+      
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+      <script>
+            $(document).ready(function() {
+
+            });
+      </script>
+  </head>
+  <body>
+  
+   <header>
+       <div class="container center-align" style="margin-top:10px">
+           <a href="http://materializecss.com/dialogs.html">Dialoge</a><br>
+       </div>
+   </header>
+   
+   
+
+    <main>  
+        <div class="container" style="margin-top:10px">
+          <!-- data-position can be : bottom, top, left, or right -->
+          <!-- data-delay controls delay before tooltip shows (in milliseconds)-->
+          <a class="btn tooltipped" data-position="bottom" data-delay="50" data-tooltip="I am tooltip">Hover me!</a>
+   
+   
+        </div>
+    </main>
+  
+  
+     <footer>
+       <div class="container center-align" style="margin-top:10px">
+            This is my footer
+       </div>
+     </footer>
+  
+  
+    
+  </body>
+</html>
+
+
