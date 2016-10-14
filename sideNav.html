@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    
+  
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <style>  <!-- This will fix the scroolbar caused by materialze.css -->
+          [class]{will-change:unset}[type=checkbox]:checked+label:before{-webkit-backface-visibility:visible;backface-visibility:visible}
+      </style>  
+      <style>
+        main {
+              top: 50px;
+              bottom: 50px;
+              width: 100%
+              } 
+        body{margin:5;width:100%;height:100%;overflow-x:hidden}footer,header{position:fixed;width:100%}header{top:0}footer{bottom:0}main{position:absolute;border-top:2px solid #F2F2F2;border-bottom:2px solid #F2F2F2;overflow:auto;overflow-x:hidden}
+      </style>
+      
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+      <script>
+            $(document).ready(function() {
+                 $('.button-collapse').sideNav({closeOnClick: true});
+            });
+            
+            function showCoyote(){
+              $("coyote").show();
+              $("road_runner").hide();
+            }
+            function showRoadRunner(){
+              $("coyote").hide();
+              $("road_runner").show();
+            }
+            
+      </script>
+  </head>
+  <body>
+  
+   <navigation>
+      <ul id="slide-out" class="side-nav">
+      <li class="no-padding"><a onclick="showCoyote()" style="cursor: pointer;"><i class="material-icons">healing</i> Wile E. Coyote</a></li>
+      <li class="no-padding"><a onclick="showRoadRunner()" style="cursor: pointer;"><i class="material-icons">volume_up</i> Road Runner</a></li>
+      <li class="no-padding divider"></li> 
+      <li class="no-padding"><a href="https://www.paypal.me/BjornBehrendt/" style="cursor: pointer;"><i class="material-icons">attach_money</i> Donate</a></li> 
+      <li class="no-padding"><a onclick="google.script.run.openBlankDialogue()" style="cursor: pointer;"><i class="material-icons">info</i>  About the Author</a></li> 
+      <li class="no-padding"><a onclick="google.script.run.openBlank()" style="cursor: pointer;"><i class="material-icons">info</i>  New Sidebar</a></li> 
+      </ul>
+   </navigation> 
+  
+  
+  
+   <header>
+       <div class="container center-align" style="margin-top:10px">
+           <a href="#" data-activates="slide-out" class="button-collapse show-on-large" style="float: left;"><i id="menuIcon" class="material-icons grey-text" style="font-size: 30px;">menu</i></a>
+           <a href="http://materializecss.com/side-nav.html">SideNav</a><br>
+            
+       </div>
+   </header>
+   
+   
+
+    <main> 
+    
+       <coyote>
+          <div class="container center-align" style="margin-top:10px">
+               <img src="http://steven-montano.com/wp-content/uploads/2011/07/wile_e__coyote_by_nostalgiaattack-d4jho0s.jpg" height="300" width="150">
+          </div>
+        </coyote>
+        
+        <road_runner style="display:none">
+          <div class="container center-align" style="margin-top:10px">
+               <img src="http://vignette1.wikia.nocookie.net/looneytunes/images/1/13/Looneytunes-roadrunner.gif/revision/latest?cb=20130303015934" height="300" width="150">
+          </div>
+        </road_runner>
+        
+        
+    </main>
+  
+  
+     <footer>
+       <div class="container center-align" style="margin-top:10px">
+            This is my footer
+       </div>
+     </footer>
+  
+  
+    
+  </body>
+</html>
+
+
